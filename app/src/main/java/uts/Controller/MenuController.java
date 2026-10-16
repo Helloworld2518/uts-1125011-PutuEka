@@ -32,5 +32,4 @@ public class MenuController {
         }
         return allProduct;
     }
-
 }

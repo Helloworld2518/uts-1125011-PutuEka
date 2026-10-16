@@ -46,7 +46,7 @@ public class Roti extends MenuItem implements Customizable{
 
     @Override 
 
-    String getOrderDetail(){
+    public String getOrderDetail(){
         return getId() + ": " + getNama() + " - " + getStok() + " - ";
     }
 }
