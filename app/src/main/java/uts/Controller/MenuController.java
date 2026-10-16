@@ -36,4 +36,13 @@ public class MenuController {
     public List<MenuItem> getProductAll() {
         return listproduk;
     }
+
+    public MenuItem getProductById(String Kode) {
+        for (MenuItem p : listproduk) {
+            if(p.getId().equals(Kode)){
+                return p;
+            }
+        }
+        return null;
+    }
 }

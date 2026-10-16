@@ -3,9 +3,10 @@
  */
 package uts;
 import uts.Model.MenuTidakDitemukanException;
+import uts.Model.StokTidakCukupException;
 import uts.View.MenuView;
 public class App {
-    public static void main(String[] args){
+    public static void main(String[] args) throws MenuTidakDitemukanException, StokTidakCukupException{
         MenuView view = new MenuView();
         view.start();
     }

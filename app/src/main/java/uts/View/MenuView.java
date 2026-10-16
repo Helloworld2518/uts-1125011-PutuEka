@@ -7,7 +7,7 @@ import uts.Model.MenuTidakDitemukanException;
 import uts.Model.StokTidakCukupException;
 import uts.Utils.Util;
 public class MenuView {
-   static MenuController Controller = new MenuController();
+    MenuController Controller = new MenuController();
 
      void printData() {
         for(String curr : Controller.getProductDetail()) {
@@ -23,18 +23,14 @@ public class MenuView {
                System.out.println(check.getOrderDetail());
                return;
             }
-            throw new MenuTidakDitemukanException("ID Tidak Valid");
+             throw new MenuTidakDitemukanException("ID Tidak Valid");
+            
         }
     }
 
-    void cekMenu(MenuItem stk) throws StokTidakCukupException{
-        boolean cek = false;
-        if (stk.getStok() <= 0){
-            throw new StokTidakCukupException("gada Stok");
-        }
-    }
+    // 
 
-    public static void main(String[] args){
+    public void start() throws StokTidakCukupException, MenuTidakDitemukanException{
         Scanner scn = new Scanner(System.in);
         System.out.println("List Menu");
         Controller.addKopi(10000, "KP-001", "Kapal Api", 1);
@@ -42,10 +38,10 @@ public class MenuView {
         Controller.addRoti(10000, "RT-001", "Roti Coklat", 1);
         printData();
 
-        System.out.println("===Cek Menu===");
-        System.out.print("Cek Kode");
+        System.out.println("===Masukkan Menu Dengan Kode===");
         String inputKode = Util.getString();
         cekMenu(inputKode);
+
 
     }
 }
