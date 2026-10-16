@@ -10,9 +10,10 @@ public class Kopi extends MenuItem implements Customizable{
 
     @Override
     public void customize(int[] customizations) {
-        int length = customizations.length;
-        
-        
+        setHargaBase(customizations[0]);
+        setHargaBase(customizations[2]);
+        setHargaBase(customizations[3]);
+        setHargaBase(customizations[6]);
     }
     @Override
     public void customize(List<Integer> customizations) {

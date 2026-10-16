@@ -2,9 +2,12 @@ package uts.View;
 import java.util.Scanner;
 
 import uts.Controller.MenuController;
+import uts.Model.MenuItem;
 import uts.Model.MenuTidakDitemukanException;
+import uts.Model.StokTidakCukupException;
+import uts.Utils.Util;
 public class MenuView {
-    MenuController Controller = new MenuController();
+   static MenuController Controller = new MenuController();
 
      void printData() {
         for(String curr : Controller.getProductDetail()) {
@@ -14,16 +17,24 @@ public class MenuView {
 
     void cekMenu(String Kode) throws MenuTidakDitemukanException{
         boolean cek = false;
-        for(String check : Controller.getKode()) {
-            if(check.equalsIgnoreCase(Kode)){
+        for(MenuItem check : Controller.getProductAll()){
+            if(check.getId().equalsIgnoreCase(Kode)){
                cek = true;
+               System.out.println(check.getOrderDetail());
                return;
             }
             throw new MenuTidakDitemukanException("ID Tidak Valid");
         }
     }
 
-    public void start() throws Exception {
+    void cekMenu(MenuItem stk) throws StokTidakCukupException{
+        boolean cek = false;
+        if (stk.getStok() <= 0){
+            throw new StokTidakCukupException("gada Stok");
+        }
+    }
+
+    public static void main(String[] args){
         Scanner scn = new Scanner(System.in);
         System.out.println("List Menu");
         Controller.addKopi(10000, "KP-001", "Kapal Api", 1);
@@ -32,8 +43,9 @@ public class MenuView {
         printData();
 
         System.out.println("===Cek Menu===");
-        System.out.println("Cek Kode");
-        System.out.print("Masukkan Kode: ");
-        String inputKode = scn.next();
+        System.out.print("Cek Kode");
+        String inputKode = Util.getString();
+        cekMenu(inputKode);
+
     }
 }

@@ -33,6 +33,10 @@ public abstract class MenuItem {
         return stok;
     }
 
+    public void setHargaBase(double harga){
+        this.hargaBase = hargaBase + harga;
+    }
+
     
     abstract double hitungHargaTotal(int jumlah);
     abstract double hitungHargaTotal(int jumlah, String kodePromo);

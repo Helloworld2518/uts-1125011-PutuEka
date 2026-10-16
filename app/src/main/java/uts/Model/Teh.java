@@ -10,7 +10,7 @@ public class Teh extends MenuItem implements Customizable{
 
     @Override
     public void customize(int[] customizations) {
-
+        
     }
     @Override
     public void customize(List<Integer> customizations) {
