@@ -37,5 +37,5 @@ public abstract class MenuItem {
     abstract double hitungHargaTotal(int jumlah);
     abstract double hitungHargaTotal(int jumlah, String kodePromo);
     abstract double hitungHargaTotal(int jumlah, EnumUkuran ukuran);
-    abstract String getOrderDetail(); 
+    public abstract String getOrderDetail(); 
 }

@@ -1,5 +1,7 @@
 package uts.Model;
 
+import java.util.List;
+
 public class Kopi extends MenuItem implements Customizable{
 
     public Kopi(double hargaBase, String id, String nama, int stok) {
@@ -8,7 +10,11 @@ public class Kopi extends MenuItem implements Customizable{
 
     @Override
     public void customize(int[] customizations) {
-
+        
+    }
+    @Override
+    public void customize(List<Integer> customizations) {
+        
     }
     @Override
     double hitungHargaTotal(int jumlah) {

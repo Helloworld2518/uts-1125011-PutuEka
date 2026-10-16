@@ -1,14 +1,20 @@
 package uts.Model;
 
+import java.util.List;
+
 public class Teh extends MenuItem implements Customizable{
 
-    public Kopi(double hargaBase, String id, String nama, int stok) {
+    public Teh(double hargaBase, String id, String nama, int stok) {
         super(hargaBase, id, nama, stok);
     }
 
     @Override
     public void customize(int[] customizations) {
 
+    }
+    @Override
+    public void customize(List<Integer> customizations) {
+        
     }
     @Override
     double hitungHargaTotal(int jumlah) {
