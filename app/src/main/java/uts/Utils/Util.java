@@ -1,4 +1,4 @@
-package Utils;
+package uts.Utils;
 import java.util.Scanner;
 
 public class Util {

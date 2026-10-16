@@ -47,6 +47,6 @@ public class Teh extends MenuItem implements Customizable{
     @Override 
 
     public String getOrderDetail(){
-        return getId() + ": " + getNama() + " - " + getStok() + " - ";
+        return getId() + ": " + getNama() + " - " + getStok() + " - " + getHargaBase();
     }
 }

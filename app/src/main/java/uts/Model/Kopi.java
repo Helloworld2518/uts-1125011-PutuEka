@@ -11,7 +11,7 @@ public class Kopi extends MenuItem implements Customizable{
     @Override
     public void customize(int[] customizations) {
         int length = customizations.length;
-
+        
         
     }
     @Override
@@ -49,6 +49,6 @@ public class Kopi extends MenuItem implements Customizable{
     @Override 
 
     public String getOrderDetail(){
-        return getId() + ": " + getNama() + " - " + getStok() + " - ";
+        return getId() + ": " + getNama() + " - " + getStok() + " - " + getHargaBase();
     }
 }
